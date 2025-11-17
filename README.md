@@ -1,0 +1,1 @@
+# Evaluating Semantic Understanding in Region-Level Document Segmentation Using Vision-Language Model
