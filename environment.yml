@@ -1,0 +1,41 @@
+name: vlm-segmentation
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.10
+  - pip
+
+  # Core scientific stack
+  - numpy
+  - pandas
+  - matplotlib
+
+  # Image & PDF generation
+  - pillow
+  - reportlab
+
+  # PDF -> image conversion (requires poppler from conda)
+  - poppler
+  - pdf2image
+
+  # Deep learning
+  - pytorch
+  - torchvision
+  - torchaudio
+  #- cudatoolkit=11.8  # or 12.1 depending on your GPU
+
+  # Annotation, data formats
+  - pip:
+      - pycocotools
+      - opencv-python
+      - timm              # ViT backbones
+      - transformers       # BLIP, CLIP, VLM backbones
+      - peft               # LoRA support
+      - datasets           # optional (HuggingFace datasets)
+      - tqdm
+      - albumentations     # for distortions/noise
+      - jsonlines
+      - pypdf2             # for PDF merging (if needed)
+      - groundingdino-py   # optional, baseline comparison
